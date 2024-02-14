@@ -36,7 +36,7 @@ class CreateInstanceRequestBody(object):
         'form_values': 'WebFormValues',
         'client_user_id': 'str',
         'authentication_instant': 'datetime',
-        'authentication_method': 'str',
+        'authentication_method': 'AuthenticationMethod',
         'assertion_id': 'str',
         'security_domain': 'str',
         'return_url': 'str',
@@ -154,7 +154,7 @@ class CreateInstanceRequestBody(object):
 
 
         :return: The authentication_method of this CreateInstanceRequestBody.  # noqa: E501
-        :rtype: str
+        :rtype: AuthenticationMethod
         """
         return self._authentication_method
 
@@ -164,7 +164,7 @@ class CreateInstanceRequestBody(object):
 
 
         :param authentication_method: The authentication_method of this CreateInstanceRequestBody.  # noqa: E501
-        :type: str
+        :type: AuthenticationMethod
         """
 
         self._authentication_method = authentication_method
