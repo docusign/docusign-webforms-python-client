@@ -119,9 +119,9 @@ class Configuration(object):
         python_version = platform.python_version()
 
         if six.PY3:
-            self.user_agent = "Swagger-Codegen/1.1.0/1.0.2rc12/python3/" + f"{python_version}"
+            self.user_agent = "Swagger-Codegen/1.1.0/1.0.0/python3/" + f"{python_version}"
         else:
-            self.user_agent = "Swagger-Codegen/1.1.0/1.0.2rc12/python2/" + f"{python_version}"
+            self.user_agent = "Swagger-Codegen/1.1.0/1.0.0/python2/" + f"{python_version}"
 
 
     @classmethod
@@ -277,5 +277,5 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 1.1.0\n"\
-               "SDK Package Version: 1.0.2rc12".\
+               "SDK Package Version: 1.0.0".\
                format(env=sys.platform, pyversion=sys.version)

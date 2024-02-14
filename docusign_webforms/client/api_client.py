@@ -88,8 +88,9 @@ class ApiClient(object):
             self.host = host
 
         self.cookie = cookie
-        self.oauth_host_name = oauth_host_name
         self.base_path = base_path
+        self.set_oauth_host_name(oauth_host_name)
+
         # Set default User-Agent.
         self.user_agent = config.user_agent
 
@@ -799,9 +800,6 @@ class ApiClient(object):
         if oauth_host_name:
             self.oauth_host_name = oauth_host_name
             return
-
-        if not oauth_host_name:
-            raise ArgumentException('oAuthBasePath cannot be empty')
 
         # Derive OAuth Base Path if not given
         if self.base_path is None or self.base_path.startswith("https://demo") or self.base_path.startswith("http://demo") or self.base_path.startswith("https://apps-d") or self.base_path.startswith("http://apps-d"):

@@ -26,6 +26,28 @@ class AuthenticationMethod(object):
     """
 
     """
+    allowed enum values
+    """
+    BIOMETRIC = "Biometric"
+    EMAIL = "Email"
+    HTTPBASICAUTH = "HTTPBasicAuth"
+    KERBEROS = "Kerberos"
+    KNOWLEDGEBASEDAUTH = "KnowledgeBasedAuth"
+    NONE = "None"
+    PAPERDOCUMENTS = "PaperDocuments"
+    PASSWORD = "Password"
+    RSASECUREID = "RSASecureID"
+    SINGLESIGNON_CASITEMINDER = "SingleSignOn_CASiteminder"
+    SINGLESIGNON_INFOCARD = "SingleSignOn_InfoCard"
+    SINGLESIGNON_MICROSOFTACTIVEDIRECTORY = "SingleSignOn_MicrosoftActiveDirectory"
+    SINGLESIGNON_OTHER = "SingleSignOn_Other"
+    SINGLESIGNON_PASSPORT = "SingleSignOn_Passport"
+    SINGLESIGNON_SAML = "SingleSignOn_SAML"
+    SMARTCARD = "Smartcard"
+    SSLMUTUALAUTH = "SSLMutualAuth"
+    X509CERTIFICATE = "X509Certificate"
+
+    """
     Attributes:
       swagger_types (dict): The key is attribute name
                             and the value is attribute type.

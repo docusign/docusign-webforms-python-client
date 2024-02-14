@@ -15,6 +15,7 @@
 from __future__ import absolute_import
 
 # import models into model package
+from docusign_webforms.models.authentication_method import AuthenticationMethod
 from docusign_webforms.models.create_instance_request_body import CreateInstanceRequestBody
 from docusign_webforms.models.http_error import HttpError
 from docusign_webforms.models.http_success import HttpSuccess
