@@ -51,6 +51,7 @@ from docusign_webforms.models.web_form_source import WebFormSource
 from docusign_webforms.models.web_form_state import WebFormState
 from docusign_webforms.models.web_form_summary import WebFormSummary
 from docusign_webforms.models.web_form_summary_list import WebFormSummaryList
+from docusign_webforms.models.web_form_type import WebFormType
 from docusign_webforms.models.web_form_user_info import WebFormUserInfo
 from docusign_webforms.models.web_form_values import WebFormValues
 

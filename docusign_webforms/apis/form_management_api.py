@@ -117,12 +117,12 @@ class FormManagementApi(object):
 
         collection_formats = {}
 
-        resource_path = '/accounts/{account_id}/forms/{form_id}'.replace('{format}', 'json')
+        resource_path = '/v1.1/accounts/{accountId}/forms/{formId}'.replace('{format}', 'json')
         path_params = {}
         if 'account_id' in params:
-            path_params['account_id'] = params['account_id']
+            path_params['accountId'] = params['account_id']
         if 'form_id' in params:
-            path_params['form_id'] = params['form_id']
+            path_params['formId'] = params['form_id']
 
         query_params = {}
         if 'state' in params:
@@ -244,10 +244,10 @@ class FormManagementApi(object):
 
         collection_formats = {}
 
-        resource_path = '/accounts/{account_id}/forms'.replace('{format}', 'json')
+        resource_path = '/v1.1/accounts/{accountId}/forms'.replace('{format}', 'json')
         path_params = {}
         if 'account_id' in params:
-            path_params['account_id'] = params['account_id']
+            path_params['accountId'] = params['account_id']
 
         query_params = {}
         if 'user_filter' in params:

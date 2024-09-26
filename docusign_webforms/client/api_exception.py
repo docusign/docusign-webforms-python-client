@@ -51,9 +51,9 @@ class ArgumentException(Exception):
 
     def __init__(self, *args, **kwargs):
         if not args:
-            super(Exception).__init__("argument cannot be empty")
+            super().__init__("argument cannot be empty")
         else:
-            super(Exception).__init__(*args, **kwargs)
+            super().__init__(*args, **kwargs)
 
 
 class InvalidBasePath(Exception):

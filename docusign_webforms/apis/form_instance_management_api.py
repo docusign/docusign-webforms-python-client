@@ -118,12 +118,12 @@ class FormInstanceManagementApi(object):
 
         collection_formats = {}
 
-        resource_path = '/accounts/{account_id}/forms/{form_id}/instances'.replace('{format}', 'json')
+        resource_path = '/v1.1/accounts/{accountId}/forms/{formId}/instances'.replace('{format}', 'json')
         path_params = {}
         if 'account_id' in params:
-            path_params['account_id'] = params['account_id']
+            path_params['accountId'] = params['account_id']
         if 'form_id' in params:
-            path_params['form_id'] = params['form_id']
+            path_params['formId'] = params['form_id']
 
         query_params = {}
 
@@ -239,14 +239,14 @@ class FormInstanceManagementApi(object):
 
         collection_formats = {}
 
-        resource_path = '/accounts/{account_id}/forms/{form_id}/instances/{instance_id}'.replace('{format}', 'json')
+        resource_path = '/v1.1/accounts/{accountId}/forms/{formId}/instances/{instanceId}'.replace('{format}', 'json')
         path_params = {}
         if 'account_id' in params:
-            path_params['account_id'] = params['account_id']
+            path_params['accountId'] = params['account_id']
         if 'form_id' in params:
-            path_params['form_id'] = params['form_id']
+            path_params['formId'] = params['form_id']
         if 'instance_id' in params:
-            path_params['instance_id'] = params['instance_id']
+            path_params['instanceId'] = params['instance_id']
 
         query_params = {}
 
@@ -359,12 +359,12 @@ class FormInstanceManagementApi(object):
 
         collection_formats = {}
 
-        resource_path = '/accounts/{account_id}/forms/{form_id}/instances'.replace('{format}', 'json')
+        resource_path = '/v1.1/accounts/{accountId}/forms/{formId}/instances'.replace('{format}', 'json')
         path_params = {}
         if 'account_id' in params:
-            path_params['account_id'] = params['account_id']
+            path_params['accountId'] = params['account_id']
         if 'form_id' in params:
-            path_params['form_id'] = params['form_id']
+            path_params['formId'] = params['form_id']
 
         query_params = {}
         if 'client_user_id' in params:
@@ -480,14 +480,14 @@ class FormInstanceManagementApi(object):
 
         collection_formats = {}
 
-        resource_path = '/accounts/{account_id}/forms/{form_id}/instances/{instance_id}/refresh'.replace('{format}', 'json')
+        resource_path = '/v1.1/accounts/{accountId}/forms/{formId}/instances/{instanceId}/refresh'.replace('{format}', 'json')
         path_params = {}
         if 'account_id' in params:
-            path_params['account_id'] = params['account_id']
+            path_params['accountId'] = params['account_id']
         if 'form_id' in params:
-            path_params['form_id'] = params['form_id']
+            path_params['formId'] = params['form_id']
         if 'instance_id' in params:
-            path_params['instance_id'] = params['instance_id']
+            path_params['instanceId'] = params['instance_id']
 
         query_params = {}
 
