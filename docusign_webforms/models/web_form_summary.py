@@ -37,6 +37,7 @@ class WebFormSummary(object):
         'account_id': 'str',
         'is_published': 'bool',
         'is_enabled': 'bool',
+        'is_uploaded': 'bool',
         'has_draft_changes': 'bool',
         'form_state': 'WebFormState',
         'form_properties': 'WebFormProperties',
@@ -48,6 +49,7 @@ class WebFormSummary(object):
         'account_id': 'accountId',
         'is_published': 'isPublished',
         'is_enabled': 'isEnabled',
+        'is_uploaded': 'isUploaded',
         'has_draft_changes': 'hasDraftChanges',
         'form_state': 'formState',
         'form_properties': 'formProperties',
@@ -64,6 +66,7 @@ class WebFormSummary(object):
         self._account_id = None
         self._is_published = None
         self._is_enabled = None
+        self._is_uploaded = None
         self._has_draft_changes = None
         self._form_state = None
         self._form_properties = None
@@ -74,6 +77,7 @@ class WebFormSummary(object):
         setattr(self, "_{}".format('account_id'), kwargs.get('account_id', None))
         setattr(self, "_{}".format('is_published'), kwargs.get('is_published', None))
         setattr(self, "_{}".format('is_enabled'), kwargs.get('is_enabled', None))
+        setattr(self, "_{}".format('is_uploaded'), kwargs.get('is_uploaded', None))
         setattr(self, "_{}".format('has_draft_changes'), kwargs.get('has_draft_changes', None))
         setattr(self, "_{}".format('form_state'), kwargs.get('form_state', None))
         setattr(self, "_{}".format('form_properties'), kwargs.get('form_properties', None))
@@ -166,6 +170,29 @@ class WebFormSummary(object):
         """
 
         self._is_enabled = is_enabled
+
+    @property
+    def is_uploaded(self):
+        """Gets the is_uploaded of this WebFormSummary.  # noqa: E501
+
+        Has the form created through upload  # noqa: E501
+
+        :return: The is_uploaded of this WebFormSummary.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_uploaded
+
+    @is_uploaded.setter
+    def is_uploaded(self, is_uploaded):
+        """Sets the is_uploaded of this WebFormSummary.
+
+        Has the form created through upload  # noqa: E501
+
+        :param is_uploaded: The is_uploaded of this WebFormSummary.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_uploaded = is_uploaded
 
     @property
     def has_draft_changes(self):

@@ -29,6 +29,7 @@ class InstanceStatus(object):
     allowed enum values
     """
     INITIATED = "INITIATED"
+    IN_PROGRESS = "IN_PROGRESS"
     SUBMITTED = "SUBMITTED"
     EXPIRED = "EXPIRED"
     FAILED = "FAILED"

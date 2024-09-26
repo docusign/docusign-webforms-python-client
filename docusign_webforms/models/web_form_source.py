@@ -30,6 +30,7 @@ class WebFormSource(object):
     """
     TEMPLATES = "templates"
     BLANK = "blank"
+    FORM = "form"
 
     """
     Attributes:

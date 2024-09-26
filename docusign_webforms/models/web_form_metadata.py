@@ -34,6 +34,8 @@ class WebFormMetadata(object):
     """
     swagger_types = {
         'source': 'WebFormSource',
+        'type': 'WebFormType',
+        'source_form_id': 'str',
         'owner': 'WebFormUserInfo',
         'sender': 'WebFormUserInfo',
         'last_modified_by': 'WebFormUserInfo',
@@ -57,6 +59,8 @@ class WebFormMetadata(object):
 
     attribute_map = {
         'source': 'source',
+        'type': 'type',
+        'source_form_id': 'sourceFormId',
         'owner': 'owner',
         'sender': 'sender',
         'last_modified_by': 'lastModifiedBy',
@@ -85,6 +89,8 @@ class WebFormMetadata(object):
         self._configuration = _configuration
 
         self._source = None
+        self._type = None
+        self._source_form_id = None
         self._owner = None
         self._sender = None
         self._last_modified_by = None
@@ -107,6 +113,8 @@ class WebFormMetadata(object):
         self.discriminator = None
 
         setattr(self, "_{}".format('source'), kwargs.get('source', None))
+        setattr(self, "_{}".format('type'), kwargs.get('type', None))
+        setattr(self, "_{}".format('source_form_id'), kwargs.get('source_form_id', None))
         setattr(self, "_{}".format('owner'), kwargs.get('owner', None))
         setattr(self, "_{}".format('sender'), kwargs.get('sender', None))
         setattr(self, "_{}".format('last_modified_by'), kwargs.get('last_modified_by', None))
@@ -131,7 +139,7 @@ class WebFormMetadata(object):
     def source(self):
         """Gets the source of this WebFormMetadata.  # noqa: E501
 
-        The source from which the webform is created. Accepted values are [upload, templates, blank]  # noqa: E501
+        The source from which the webform is created. Accepted values are [templates, blank, form]  # noqa: E501
 
         :return: The source of this WebFormMetadata.  # noqa: E501
         :rtype: WebFormSource
@@ -142,13 +150,59 @@ class WebFormMetadata(object):
     def source(self, source):
         """Sets the source of this WebFormMetadata.
 
-        The source from which the webform is created. Accepted values are [upload, templates, blank]  # noqa: E501
+        The source from which the webform is created. Accepted values are [templates, blank, form]  # noqa: E501
 
         :param source: The source of this WebFormMetadata.  # noqa: E501
         :type: WebFormSource
         """
 
         self._source = source
+
+    @property
+    def type(self):
+        """Gets the type of this WebFormMetadata.  # noqa: E501
+
+        Represents webform type. Possible values are [standalone, hasEsignTemplate]  # noqa: E501
+
+        :return: The type of this WebFormMetadata.  # noqa: E501
+        :rtype: WebFormType
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this WebFormMetadata.
+
+        Represents webform type. Possible values are [standalone, hasEsignTemplate]  # noqa: E501
+
+        :param type: The type of this WebFormMetadata.  # noqa: E501
+        :type: WebFormType
+        """
+
+        self._type = type
+
+    @property
+    def source_form_id(self):
+        """Gets the source_form_id of this WebFormMetadata.  # noqa: E501
+
+        The source form id from which the webform is created.  # noqa: E501
+
+        :return: The source_form_id of this WebFormMetadata.  # noqa: E501
+        :rtype: str
+        """
+        return self._source_form_id
+
+    @source_form_id.setter
+    def source_form_id(self, source_form_id):
+        """Sets the source_form_id of this WebFormMetadata.
+
+        The source form id from which the webform is created.  # noqa: E501
+
+        :param source_form_id: The source_form_id of this WebFormMetadata.  # noqa: E501
+        :type: str
+        """
+
+        self._source_form_id = source_form_id
 
     @property
     def owner(self):

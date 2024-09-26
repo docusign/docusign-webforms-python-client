@@ -25,6 +25,7 @@ import six
 from six.moves.urllib.parse import urlencode
 
 from .api_exception import ApiException
+from .configuration import Configuration
 
 try:
     import urllib3
@@ -54,12 +55,15 @@ class RESTResponse(io.IOBase):
 
 class RESTClientObject(object):
 
-    def __init__(self, configuration, pools_size=4, maxsize=None):
+    def __init__(self, pools_size=4, maxsize=None, configuration=None):
         # urllib3.PoolManager will pass all kw parameters to connectionpool
         # https://github.com/shazow/urllib3/blob/f9409436f83aeb79fbaf090181cd81b784f1b8ce/urllib3/poolmanager.py#L75  # noqa: E501
         # https://github.com/shazow/urllib3/blob/f9409436f83aeb79fbaf090181cd81b784f1b8ce/urllib3/connectionpool.py#L680  # noqa: E501
         # maxsize is the number of requests to host that are allowed in parallel  # noqa: E501
         # Custom SSL certificates and client certificates: http://urllib3.readthedocs.io/en/latest/advanced-usage.html  # noqa: E501
+
+        if configuration is None:
+            configuration = Configuration()
 
         # cert_reqs
         if configuration.verify_ssl:
@@ -233,18 +237,11 @@ class RESTClientObject(object):
             msg = "{0}\n{1}".format(type(e).__name__, str(e))
             raise ApiException(status=0, reason=msg)
 
-        if _preload_content:
-            r = RESTResponse(r)
-
-            # In the python 3, the response.data is bytes.
-            # we need to decode it to string.
-            if six.PY3:
-                try:
-                    r.data = r.data.decode('utf8')
-                except (UnicodeDecodeError, AttributeError):
-                    pass
             # log response body
             logger.debug("response body: %s", r.data)
+
+        if _preload_content:
+            r = RESTResponse(r)
 
         if not 200 <= r.status <= 299:
             raise ApiException(http_resp=r)

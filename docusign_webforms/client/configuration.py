@@ -50,13 +50,10 @@ class Configuration(object):
             return
 
         # Default Base url
-        self.host = "https://apps-d.docusign.com/api/webforms/v1.1"
+        self.host = "https://apps-d.docusign.com/api/webforms"
         
         # Default api client
         self.api_client = None
-
-        # Temp file folder for downloading files
-        self.temp_folder_path = None
 
         # Authentication Settings
         # dict to store API key(s)
@@ -119,9 +116,9 @@ class Configuration(object):
         python_version = platform.python_version()
 
         if six.PY3:
-            self.user_agent = "Swagger-Codegen/1.1.0/1.0.0/python3/" + f"{python_version}"
+            self.user_agent = "Swagger-Codegen/1.1.0/2.0.0rc1/python3/" + f"{python_version}"
         else:
-            self.user_agent = "Swagger-Codegen/1.1.0/1.0.0/python2/" + f"{python_version}"
+            self.user_agent = "Swagger-Codegen/1.1.0/2.0.0rc1/python2/" + f"{python_version}"
 
 
     @classmethod
@@ -277,5 +274,5 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 1.1.0\n"\
-               "SDK Package Version: 1.0.0".\
+               "SDK Package Version: 2.0.0rc1".\
                format(env=sys.platform, pyversion=sys.version)
